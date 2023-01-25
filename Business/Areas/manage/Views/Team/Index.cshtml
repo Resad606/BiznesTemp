@@ -1,0 +1,40 @@
+﻿@model List<Team>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+<div class="container-fluid" style="display:flex;justify-content:space-between;align-items:center">
+    <h1>Teams;</h1>
+    <a asp-action="Create" asp-controller="team" class="btn btn-success ">Create a new team</a>
+</div> 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">FullName</th>
+      <th scope="col">Profession</th>
+      <th scope="col">Image</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach(Team team in Model)
+        {
+                <tr>
+      <th scope="row">1</th>
+      <td>@team.FullName</td>
+       <td>@team.Profession</td>
+      <td>@team.Imagge</td>
+      <td>
+          <a asp-action="update" asp-controller="team" asp-route-id=@team.Id class="btn btn-info">Update</a>
+          <a asp-action="delete" asp-controller="team" asp-route-id=@team.Id class="btn btn-danger">delete</a>
+
+      </td>
+    </tr>
+  
+            
+        }
+
+  
+  </tbody>
+</table>

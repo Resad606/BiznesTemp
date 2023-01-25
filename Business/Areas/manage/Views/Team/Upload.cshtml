@@ -1,0 +1,30 @@
+﻿@model Team
+@{
+    ViewData["Title"] = "Upload";
+}
+<h1>Upload a Team</h1>
+<div class="container-fluid">
+    <form method="post" asp-action="upload" enctype="multipart/form-data">
+        <div class="row">
+            <div class="mb-3 col-md-3">
+                <label asp-for="FullName" class="form-label">FullName</label>
+                <input class="form-control" asp-for="FullName" placeholder="FullName">
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 col-md-3">
+                <label asp-for="Profession" class="form-label">Profession</label>
+                <input class="form-control" asp-for="Profession" placeholder="Profession">
+                <span asp-validation-for="Profession" class="text-danger"></span>
+            </div>
+
+            <div stlye="margin-bottom:20px">
+                <label asp-for="ImageFile" class=" = form-label">ImageFile</label>
+                <input class="form-control" asp-for="ImageFile" placeholder="ImageFile">
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>
+
